@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://grjcuqg5mn0s"]
+[gd_scene load_steps=5 format=3 uid="uid://grjcuqg5mn0s"]
 
 [ext_resource type="Texture2D" uid="uid://ba17ovy0ef317" path="res://Assets/kenney_toon-characters-1/Female person/Tilesheet/character_femalePerson_sheetHD.png" id="1_u6as8"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_vhlfk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1xqmj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gr3y3"]
 
 [node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_vhlfk")
 
 [node name="Area3DTrigger" type="Area3D" parent="."]
 
