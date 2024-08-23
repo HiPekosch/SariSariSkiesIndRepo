@@ -72,23 +72,24 @@ sky = SubResource("Sky_8niel")
 [node name="Main" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.986098, 0.0388476, -0.161398, 0, 0.972133, 0.234007, 0.166014, -0.230749, 0.958685, 2.33789, 4.2971, 6.33721)
+transform = Transform3D(0.999061, -0.00663147, 0.0419354, 0, 0.98762, 0.156192, -0.0424576, -0.156044, 0.986774, 1.18052, 4.32281, 6.35395)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("1_oae40")
 
-[node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target", "follow_path", "look_at_target")]
-transform = Transform3D(0.986098, 0.0388476, -0.161398, 0, 0.972133, 0.234007, 0.166014, -0.230749, 0.958685, 2.33789, 4.2971, 6.33721)
+[node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target", "follow_path", "look_at_target", "look_at_targets")]
+transform = Transform3D(0.999061, -0.00663147, 0.0419354, 0, 0.98762, 0.156192, -0.0424576, -0.156044, 0.986774, 1.18052, 4.32281, 6.35395)
 script = ExtResource("2_fkpr1")
 follow_mode = 4
 follow_target = NodePath("../Player/PlayerVisual")
 follow_path = NodePath("../Path3D")
-look_at_mode = 2
+look_at_mode = 3
 look_at_target = NodePath("../Player/PlayerVisual")
+look_at_targets = [NodePath("../Player/PlayerVisual"), NodePath("../Player/playerkite/PlayerVisual")]
 tween_resource = SubResource("Resource_r5ngo")
 camera_3d_resource = SubResource("Resource_irnru")
 follow_damping = true
-look_at_offset = Vector3(2, 0, -3.825)
+look_at_offset = Vector3(3.55, 0, -3.66)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.692433, 0.721482, 0, -0.721482, 0.692433, 0, 16.1887, 7.16609)
@@ -97,7 +98,7 @@ shadow_enabled = true
 shadow_bias = 1.048
 
 [node name="Player" parent="." instance=ExtResource("2_kl6lr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17611, 1.63192, -0.756554)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.82389, 1.63192, -0.756554)
 
 [node name="Sprite3D" parent="Player/PlayerVisual" index="1"]
 cast_shadow = 2
@@ -523,6 +524,7 @@ transform = Transform3D(1, 0, 0, 0, 5.83997, 0, 0, 0, 8.09208, -3.83244, 2.23665
 transform = Transform3D(1, 0, 0, 0, 5.83997, 0, 0, 0, 8.09208, 45.1663, 2.23665, -0.31845)
 
 [editable path="Player"]
+[editable path="Player/playerkite"]
 [editable path="InvisibleStaticBody3D"]
 [editable path="InvisibleStaticBody3D3"]
 [editable path="InvisibleStaticBody3D2"]
