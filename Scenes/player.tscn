@@ -1,11 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://grjcuqg5mn0s"]
+[gd_scene load_steps=8 format=3 uid="uid://grjcuqg5mn0s"]
 
 [ext_resource type="Texture2D" uid="uid://ba17ovy0ef317" path="res://Assets/kenney_toon-characters-1/Female person/Tilesheet/character_femalePerson_sheetHD.png" id="1_u6as8"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_vhlfk"]
+[ext_resource type="Texture2D" uid="uid://ckyg4e58oaggr" path="res://Assets/kenney_toon-characters-1/Female person/PNG/Poses HD/character_femalePerson_idle.png" id="3_di536"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1xqmj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gr3y3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxb4o"]
+transparency = 1
+albedo_texture = ExtResource("3_di536")
+
+[sub_resource type="QuadMesh" id="QuadMesh_n7ix1"]
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05814, 0)
@@ -22,7 +29,16 @@ shape = SubResource("CapsuleShape3D_gr3y3")
 [node name="PlayerVisual" type="Node3D" parent="."]
 
 [node name="Sprite3D" type="Sprite3D" parent="PlayerVisual"]
-billboard = 2
+gi_mode = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
 texture = ExtResource("1_u6as8")
 hframes = 9
 vframes = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerVisual"]
+transform = Transform3D(2.29373, 0, 0, 0, 2.29373, 0, 0, 0, 2.29373, -0.0638111, 0.186528, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_dxb4o")
+mesh = SubResource("QuadMesh_n7ix1")
