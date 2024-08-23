@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://csgku2sdlu11q"
+path="res://.godot/imported/wall_windowA.obj-3f5492d0330f4d680172cc38f678775d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_windowA.obj-3f5492d0330f4d680172cc38f678775d.mesh"]
+
+source_file="res://Assets/kenney_city-kit-commercial/Models/OBJ format/wall_windowA.obj"
+dest_files=["res://.godot/imported/wall_windowA.obj-3f5492d0330f4d680172cc38f678775d.mesh", "res://.godot/imported/wall_windowA.obj-3f5492d0330f4d680172cc38f678775d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d3edd008e0bwa"
+path="res://.godot/imported/roof_side.obj-87fbb40930de232cf084f9e08b3a408f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/roof_side.obj-87fbb40930de232cf084f9e08b3a408f.mesh"]
+
+source_file="res://Assets/kenney_city-kit-commercial/Models/OBJ format/roof_side.obj"
+dest_files=["res://.godot/imported/roof_side.obj-87fbb40930de232cf084f9e08b3a408f.mesh", "res://.godot/imported/roof_side.obj-87fbb40930de232cf084f9e08b3a408f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

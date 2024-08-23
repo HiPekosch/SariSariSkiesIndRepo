@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dkulh74trspif"
+path="res://.godot/imported/large_buildingA.obj-984e8ba3dcaa3d0b946107c9c3085f01.mesh"
+
+[deps]
+
+files=["res://.godot/imported/large_buildingA.obj-984e8ba3dcaa3d0b946107c9c3085f01.mesh"]
+
+source_file="res://Assets/kenney_city-kit-commercial/Models/OBJ format/large_buildingA.obj"
+dest_files=["res://.godot/imported/large_buildingA.obj-984e8ba3dcaa3d0b946107c9c3085f01.mesh", "res://.godot/imported/large_buildingA.obj-984e8ba3dcaa3d0b946107c9c3085f01.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

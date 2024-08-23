@@ -154,7 +154,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.672716, -1.19209e-07, 0.19
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.672716, -1.19209e-07, 0.192142)
 
 [node name="block-grass-overhang-low2" parent="." instance=ExtResource("37_ll5k7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.68465, -1.19209e-07, 2.49804)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34685, -1.19209e-07, 2.49804)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="block-grass-overhang-low2/block-grass-overhang-low" index="0"]
 disable_mode = 1

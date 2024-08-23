@@ -22,6 +22,7 @@ shape = SubResource("CapsuleShape3D_gr3y3")
 [node name="PlayerVisual" type="Node3D" parent="."]
 
 [node name="Sprite3D" type="Sprite3D" parent="PlayerVisual"]
+billboard = 2
 texture = ExtResource("1_u6as8")
 hframes = 9
 vframes = 4
