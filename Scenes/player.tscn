@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://grjcuqg5mn0s"]
+[gd_scene load_steps=13 format=3 uid="uid://grjcuqg5mn0s"]
 
 [ext_resource type="Texture2D" uid="uid://ba17ovy0ef317" path="res://Assets/kenney_toon-characters-1/Female person/Tilesheet/character_femalePerson_sheetHD.png" id="1_u6as8"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_vhlfk"]
@@ -7,6 +7,47 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1xqmj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gr3y3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajred"]
+atlas = ExtResource("1_u6as8")
+region = Rect2(0, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15jmx"]
+atlas = ExtResource("1_u6as8")
+region = Rect2(1152, 512, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3c4u7"]
+atlas = ExtResource("1_u6as8")
+region = Rect2(1344, 512, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omxbr"]
+atlas = ExtResource("1_u6as8")
+region = Rect2(1536, 512, 192, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ypqcr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajred")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15jmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c4u7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omxbr")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 12.0
+}]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxb4o"]
 transparency = 1
@@ -28,7 +69,15 @@ shape = SubResource("CapsuleShape3D_gr3y3")
 
 [node name="PlayerVisual" type="Node3D" parent="."]
 
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="PlayerVisual"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.313791, 0)
+shaded = true
+alpha_cut = 2
+sprite_frames = SubResource("SpriteFrames_ypqcr")
+animation = &"Idle"
+
 [node name="Sprite3D" type="Sprite3D" parent="PlayerVisual"]
+visible = false
 gi_mode = 2
 shaded = true
 alpha_cut = 2
