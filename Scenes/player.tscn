@@ -8,6 +8,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gr3y3"]
 
 [node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05814, 0)
 script = ExtResource("1_vhlfk")
 
 [node name="Area3DTrigger" type="Area3D" parent="."]

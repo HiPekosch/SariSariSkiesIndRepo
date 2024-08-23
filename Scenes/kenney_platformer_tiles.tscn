@@ -1,4 +1,4 @@
-[gd_scene load_steps=143 format=3 uid="uid://br4800tdmm8s3"]
+[gd_scene load_steps=145 format=3 uid="uid://br4800tdmm8s3"]
 
 [ext_resource type="PackedScene" uid="uid://d2rvwghinhvf0" path="res://Assets/kenney_platformer-kit/Models/GLB format/arrow.glb" id="1_toryw"]
 [ext_resource type="PackedScene" uid="uid://5xt3a0ljgd0l" path="res://Assets/kenney_platformer-kit/Models/GLB format/arrows.glb" id="2_dx4lo"]
@@ -143,6 +143,11 @@
 [ext_resource type="PackedScene" uid="uid://diic5mgc7d5c0" path="res://Assets/kenney_platformer-kit/Models/GLB format/tree-snow.glb" id="141_q45dj"]
 [ext_resource type="PackedScene" uid="uid://js5w0jwib1ip" path="res://Assets/kenney_platformer-kit/Models/GLB format/tree.glb" id="142_uoank"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bpq4c"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n3hom"]
+points = PackedVector3Array(-0.75369, 0.874897, -1.04106, -0.72638, 0.999995, -1.0001, 0.753487, 0.874897, -1.04106, -0.72638, 0, -1.0001, -0.957093, 0.874897, -0.957093, -0.919999, 0.999995, -0.919999, 0.726176, 0.999995, -1.0001, 0.726176, 0, -1.0001, 0.956685, 0.874897, -0.957093, -0.919999, 0, -0.919999, -1.0001, 0, -0.72638, -1.04106, 0.874897, -0.75369, -1.0001, 0.999995, -0.72638, 0.919592, 0.999995, -0.919999, 0.919592, 0, -0.919999, 0.999893, 0.999995, -0.72638, 1.04086, 0.874897, -0.75369, 0.999893, 0, -0.72638, -1.0001, 0, 0.726176, -1.04106, 0.874897, 0.753486, -1.0001, 0.999995, 0.726176, 0.999893, 0.999995, 0.726176, 1.04086, 0.874897, 0.753486, 0.999893, 0, 0.726176, -0.957093, 0.874897, 0.956685, -0.919999, 0, 0.919592, -0.919999, 0.999995, 0.919592, 0.919592, 0.999995, 0.919592, 0.956685, 0.874897, 0.956685, 0.919592, 0, 0.919592, -0.75369, 0.874897, 1.04106, -0.72638, 0, 0.999893, -0.72638, 0.999995, 0.999893, 0.726176, 0.999995, 0.999893, 0.753487, 0.874897, 1.04106, 0.726176, 0, 0.999893)
+
 [node name="KenneyPlatformerTiles" type="Node3D"]
 
 [node name="arrow2" parent="." instance=ExtResource("1_toryw")]
@@ -194,10 +199,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0760939, -1.19209e-07, 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0760939, -1.19209e-07, 0.0415699)
 
 [node name="block-grass-large-tall2" parent="." instance=ExtResource("17_j1103")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0760939, -1.19209e-07, 0.0415699)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.92391, -1.19209e-07, 0.0415699)
 
 [node name="block-grass-large2" parent="." instance=ExtResource("18_e6ako")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0760939, -1.19209e-07, 0.0415699)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0760939, -1.19209e-07, 3.04157)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-large2/block-grass-large" index="0"]
+physics_material_override = SubResource("PhysicsMaterial_bpq4c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-large2/block-grass-large/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_n3hom")
 
 [node name="block-grass-long2" parent="." instance=ExtResource("19_2u1yw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0760939, -1.19209e-07, 0.0415699)
@@ -570,3 +581,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0760939, -1.19209e-07, 0.0
 
 [node name="tree2" parent="." instance=ExtResource("142_uoank")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0760939, -1.19209e-07, 0.0415699)
+
+[editable path="block-grass-large2"]
