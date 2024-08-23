@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bnic3maa18kq2"]
+[gd_scene load_steps=37 format=3 uid="uid://bnic3maa18kq2"]
 
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_oae40"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_fkpr1"]
@@ -27,6 +27,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cs3ej7ri2pdor" path="res://Assets/kenney_city-kit-commercial/Models/OBJ format/skyscraperD.obj" id="25_pr2h2"]
 [ext_resource type="ArrayMesh" uid="uid://5miu0rylbxd6" path="res://Assets/kenney_car-kit/Models/OBJ format/wheel-default.obj" id="26_tvm3n"]
 [ext_resource type="ArrayMesh" uid="uid://byib8iumimaev" path="res://Assets/kenney_car-kit/Models/OBJ format/van.obj" id="27_pitnc"]
+[ext_resource type="PackedScene" uid="uid://c68mvusxmy1bc" path="res://Scenes/invisible_static_body_3d.tscn" id="28_xmfk7"]
 
 [sub_resource type="Resource" id="Resource_r5ngo"]
 script = ExtResource("3_cpup4")
@@ -488,4 +489,20 @@ mesh = ExtResource("24_sc0ja")
 transform = Transform3D(9.87197, 0, 0, 0, 9.87197, 0, 0, 0, 9.87197, 30.829, -3.84991, -38.6294)
 mesh = ExtResource("25_pr2h2")
 
+[node name="InvisibleStaticBody3D" parent="." instance=ExtResource("28_xmfk7")]
+transform = Transform3D(60.442, 0, 0, 0, 7.87721, 0, 0, 0, 1, 19.6116, 3.88975, 1.66474)
+
+[node name="InvisibleStaticBody3D3" parent="." instance=ExtResource("28_xmfk7")]
+transform = Transform3D(60.442, 0, 0, 0, 7.87721, 0, 0, 0, 1, 19.6116, 3.88975, -2.50044)
+
+[node name="InvisibleStaticBody3D2" parent="." instance=ExtResource("28_xmfk7")]
+transform = Transform3D(1, 0, 0, 0, 5.83997, 0, 0, 0, 8.09208, -3.83244, 2.23665, -0.31845)
+
+[node name="InvisibleStaticBody3D4" parent="." instance=ExtResource("28_xmfk7")]
+transform = Transform3D(1, 0, 0, 0, 5.83997, 0, 0, 0, 8.09208, 45.1663, 2.23665, -0.31845)
+
 [editable path="Player"]
+[editable path="InvisibleStaticBody3D"]
+[editable path="InvisibleStaticBody3D3"]
+[editable path="InvisibleStaticBody3D2"]
+[editable path="InvisibleStaticBody3D4"]
