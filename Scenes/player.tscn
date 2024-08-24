@@ -61,6 +61,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05814, 0)
 script = ExtResource("1_vhlfk")
 
 [node name="Area3DTrigger" type="Area3D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3DTrigger"]
 shape = SubResource("CapsuleShape3D_1xqmj")
@@ -94,6 +95,12 @@ material_override = SubResource("StandardMaterial3D_dxb4o")
 mesh = SubResource("QuadMesh_n7ix1")
 
 [node name="playerkite" parent="." instance=ExtResource("4_ps2dd")]
-transform = Transform3D(0.0557365, 0, 0, 0, 0.0557365, 0, 0, 0, 0.0557365, -2.00662, 1.97216, 0)
+transform = Transform3D(0.0557365, 7.45058e-09, -6.51926e-09, 1.11759e-08, 0.0557365, 1.86265e-09, -2.79397e-09, 5.12227e-09, 0.0557365, -2.14633, 2.23829, 1.19209e-06)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(0.139688, 0.698403, -0.701941, -0.136311, 0.715705, 0.684971, 0.980768, 0, 0.195176, 0.0730715, -0.0816033, 0)
+visible = false
+collision_mask = 0
+spring_length = 3.0
 
 [editable path="playerkite"]

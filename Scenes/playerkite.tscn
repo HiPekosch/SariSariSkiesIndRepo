@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/playerkite.gd" id="1_k2hux"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ihkfl"]
-radius = 0.0204742
+radius = 0.0270434
 height = 0.231572
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_llwgn"]
@@ -22,14 +22,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="playerkite" type="CharacterBody3D"]
+[node name="playerkite" type="CharacterBody3D" groups=["Kite"]]
 motion_mode = 1
 script = ExtResource("1_k2hux")
 
 [node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(257.042, 0, 0, 0, 257.042, 0, 0, 0, 257.042, -0.862976, 0.0331173, 0.0953441)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(84.909, 198.672, 0, -198.672, 84.909, 0, 0, 0, 216.056, 0, -3.72321, 0)
+transform = Transform3D(0.392996, 0.91954, 0, -0.91954, 0.392996, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_ihkfl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
