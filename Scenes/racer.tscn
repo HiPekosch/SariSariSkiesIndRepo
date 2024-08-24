@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3 uid="uid://dueswhamrbcec"]
+
+[ext_resource type="Script" path="res://Scripts/racer.gd" id="1_me2c4"]
+[ext_resource type="Texture2D" uid="uid://vcqoemoha56t" path="res://Assets/kenney_toon-characters-1/Male adventurer/Tilesheet/character_maleAdventurer_sheet.png" id="2_n8tgi"]
+[ext_resource type="Texture2D" uid="uid://cqgkiukhkajvl" path="res://Assets/kenney_toon-characters-1/Male adventurer/Tilesheet/character_maleAdventurer_sheetHD.png" id="3_51fsb"]
+[ext_resource type="PackedScene" uid="uid://c8ybnoqx6cmn4" path="res://Scenes/racerkite.tscn" id="4_nu82s"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1xqmj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gr3y3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgt2o"]
+atlas = ExtResource("2_n8tgi")
+region = Rect2(0, 0, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47noh"]
+atlas = ExtResource("3_51fsb")
+region = Rect2(1152, 512, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jdwl"]
+atlas = ExtResource("3_51fsb")
+region = Rect2(1344, 512, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xklq"]
+atlas = ExtResource("3_51fsb")
+region = Rect2(1536, 512, 192, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ypqcr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgt2o")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47noh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jdwl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xklq")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 12.0
+}]
+
+[node name="Racer" type="CharacterBody3D" groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
+wall_min_slide_angle = 0.174533
+script = ExtResource("1_me2c4")
+
+[node name="Area3DTrigger" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3DTrigger"]
+shape = SubResource("CapsuleShape3D_1xqmj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_gr3y3")
+
+[node name="PlayerVisual" type="Node3D" parent="."]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="PlayerVisual"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.313791, 0)
+shaded = true
+alpha_cut = 2
+sprite_frames = SubResource("SpriteFrames_ypqcr")
+animation = &"Run"
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(0.0421198, -0.999113, 0, 0.999113, 0.0421198, 0, 0, 0, 1, 0.505714, -0.659739, 0)
+collide_with_areas = true
+
+[node name="racerkite" parent="." instance=ExtResource("4_nu82s")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -1.74904, 2.18904, 0.105371)
+
+[connection signal="area_entered" from="Area3DTrigger" to="." method="_on_area_3d_trigger_area_entered"]
+[connection signal="area_exited" from="Area3DTrigger" to="." method="_on_area_3d_trigger_area_exited"]
+[connection signal="body_entered" from="Area3DTrigger" to="." method="_on_area_3d_trigger_body_entered"]
+[connection signal="body_exited" from="Area3DTrigger" to="." method="_on_area_3d_trigger_body_exited"]

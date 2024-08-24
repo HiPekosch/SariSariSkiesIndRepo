@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8ybnoqx6cmn4"]
+
+[ext_resource type="Texture2D" uid="uid://mlcd0watcnl2" path="res://Assets/BlueKiteDraft.png" id="1_ctnmt"]
+[ext_resource type="Texture2D" uid="uid://dpo811en45rm2" path="res://Assets/FireKiteDraft.png" id="1_wu47f"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ihkfl"]
+radius = 0.0270434
+height = 0.231572
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phg3c"]
+atlas = ExtResource("1_ctnmt")
+region = Rect2(0, 0, 4880, 2854)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5nd4u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phg3c")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="racerkite" type="CharacterBody3D" groups=["Kite"]]
+motion_mode = 1
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(257.042, 0, 0, 0, 257.042, 0, 0, 0, 257.042, -0.862976, 0.0331173, 0.0953441)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.392996, 0.91954, 0, -0.91954, 0.392996, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_ihkfl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(11.1189, 9.61385, 0, -9.61385, 11.1189, 0, 0, 0, 14.6988, 9.86485, 1.13935, 0)
+shape = SubResource("CapsuleShape3D_ihkfl")
+
+[node name="PlayerVisual" type="Node3D" parent="."]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="PlayerVisual"]
+gi_mode = 2
+flip_h = true
+shaded = true
+alpha_cut = 2
+sprite_frames = SubResource("SpriteFrames_5nd4u")
+animation = &"Idle"
+
+[node name="Sprite3D" type="Sprite3D" parent="PlayerVisual"]
+visible = false
+gi_mode = 2
+flip_h = true
+shaded = true
+alpha_cut = 2
+texture = ExtResource("1_wu47f")

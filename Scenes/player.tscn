@@ -9,19 +9,19 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gr3y3"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ajred"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_eq8w2"]
 atlas = ExtResource("1_u6as8")
 region = Rect2(0, 0, 192, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_15jmx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mohcm"]
 atlas = ExtResource("1_u6as8")
 region = Rect2(1152, 512, 192, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3c4u7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvtoo"]
 atlas = ExtResource("1_u6as8")
 region = Rect2(1344, 512, 192, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_omxbr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5sbw"]
 atlas = ExtResource("1_u6as8")
 region = Rect2(1536, 512, 192, 256)
 
@@ -29,7 +29,7 @@ region = Rect2(1536, 512, 192, 256)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ajred")
+"texture": SubResource("AtlasTexture_eq8w2")
 }],
 "loop": true,
 "name": &"Idle",
@@ -37,13 +37,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_15jmx")
+"texture": SubResource("AtlasTexture_mohcm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3c4u7")
+"texture": SubResource("AtlasTexture_dvtoo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_omxbr")
+"texture": SubResource("AtlasTexture_w5sbw")
 }],
 "loop": true,
 "name": &"Run",
@@ -58,6 +58,7 @@ albedo_texture = ExtResource("3_di536")
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05814, 0)
+wall_min_slide_angle = 0.174533
 script = ExtResource("1_vhlfk")
 
 [node name="Area3DTrigger" type="Area3D" parent="."]
@@ -75,7 +76,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.313791, 0)
 shaded = true
 alpha_cut = 2
 sprite_frames = SubResource("SpriteFrames_ypqcr")
-animation = &"Idle"
+animation = &"Run"
 
 [node name="Sprite3D" type="Sprite3D" parent="PlayerVisual"]
 visible = false

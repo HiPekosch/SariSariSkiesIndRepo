@@ -7,7 +7,7 @@
 radius = 0.0270434
 height = 0.231572
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_llwgn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8xnh"]
 atlas = ExtResource("1_6w22p")
 region = Rect2(0, 0, 4880, 2854)
 
@@ -15,7 +15,7 @@ region = Rect2(0, 0, 4880, 2854)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_llwgn")
+"texture": SubResource("AtlasTexture_i8xnh")
 }],
 "loop": true,
 "name": &"Idle",
