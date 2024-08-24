@@ -28,7 +28,7 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 
 	# Handle jump.
-	if ray_cast_3d.is_colliding():
+	if ray_cast_3d.is_colliding() and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	
 	position.x += SPEED * delta

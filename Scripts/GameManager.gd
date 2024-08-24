@@ -4,6 +4,10 @@ var coinsCollected
 var place
 @onready var player = $"../Player"
 @onready var starting_timer = $"../StartingTimer"
+@onready var race_finished = $"../CanvasLayer/Race Finished"
+
+var isRaceDone = false
+
 
 #need a coroutine for delayed start 
 
@@ -35,6 +39,16 @@ func _process(delta):
 	pass
 
 func _on_end_zone_body_entered(body):
-	if(body.is_in_group("player")):
-		print("Race Finished!")
+	if(body.is_in_group("player") && !isRaceDone):
+		print("You Win!")
+		race_finished.visible = true
+		race_finished.text = ("You win!")
+		isRaceDone = true
+		
+	if(body.is_in_group("racer") && !isRaceDone):
+		print("You Lose!")
+		race_finished.visible = true
+		race_finished.text = ("You lose!")
+		isRaceDone = true
+		
 		

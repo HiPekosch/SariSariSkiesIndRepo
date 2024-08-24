@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dhm26s6j0v1od"]
+
+[node name="UILayer" type="CanvasLayer"]
+
+[node name="Coins" type="RichTextLabel" parent="."]
+offset_right = 637.0
+offset_bottom = 217.0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "Coin Counter:"
+custom_effects = [null]
+
+[node name="Race Finished" type="RichTextLabel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_top = 302.0
+offset_right = 477.0
+offset_bottom = 519.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "Race Finished"
+custom_effects = [null]
