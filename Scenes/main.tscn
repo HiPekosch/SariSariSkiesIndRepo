@@ -1,6 +1,8 @@
-[gd_scene load_steps=38 format=3 uid="uid://bnic3maa18kq2"]
+[gd_scene load_steps=40 format=3 uid="uid://bnic3maa18kq2"]
 
+[ext_resource type="PackedScene" uid="uid://77moq7nbya3m" path="res://Scenes/GameManager.tscn" id="1_2jskj"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_oae40"]
+[ext_resource type="PackedScene" uid="uid://baxl6si0aasmk" path="res://Scenes/EndZone.tscn" id="2_c6mk8"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_fkpr1"]
 [ext_resource type="PackedScene" uid="uid://grjcuqg5mn0s" path="res://Scenes/player.tscn" id="2_kl6lr"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_cpup4"]
@@ -50,7 +52,7 @@ far = 4000.0
 
 [sub_resource type="Curve3D" id="Curve3D_ujgq1"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 28.4736, -0.632461, -0.41175, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 42.897, -1.74277, -1.16038, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -72,14 +74,28 @@ sky = SubResource("Sky_8niel")
 
 [node name="Main" type="Node3D"]
 
+[node name="GameManager" parent="." instance=ExtResource("1_2jskj")]
+
+[node name="StartingTimer" type="Timer" parent="."]
+process_mode = 3
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="EndZone" parent="." instance=ExtResource("2_c6mk8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.3752, 1.22458, 0.16884)
+
+[node name="CollisionShape3D" parent="EndZone" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.48987, -0.182953)
+
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.998765, -0.00705574, 0.04841, 0, 0.989438, 0.144223, -0.0489228, -0.144044, 0.988296, 1.18052, 4.32281, 6.35395)
+transform = Transform3D(0.999243, -0.00874992, 0.0367828, 0, 0.972737, 0.231413, -0.0378107, -0.231239, 0.97208, 1.18052, 6.07022, 9.52596)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("1_oae40")
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target", "follow_path", "look_at_target", "look_at_targets")]
-transform = Transform3D(0.998765, -0.00705574, 0.04841, 0, 0.989438, 0.144223, -0.0489228, -0.144044, 0.988296, 1.18052, 4.32281, 6.35395)
+transform = Transform3D(0.999243, -0.00874992, 0.0367828, 0, 0.972737, 0.231413, -0.0378107, -0.231239, 0.97208, 1.18052, 6.07022, 9.52596)
 script = ExtResource("2_fkpr1")
 follow_mode = 4
 follow_target = NodePath("../Player/PlayerVisual")
@@ -108,7 +124,7 @@ cast_shadow = 2
 transform = Transform3D(-0.0608563, 0.752185, -0.656136, 0.0694667, 0.658952, 0.74897, 0.995726, 0, -0.0923532, -0.832713, 1.53604, 0)
 
 [node name="Path3D" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18052, 4.32281, 6.35395)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18052, 6.07022, 9.52596)
 curve = SubResource("Curve3D_ujgq1")
 
 [node name="CubeWalkway" type="StaticBody3D" parent="."]
@@ -524,6 +540,14 @@ light_volumetric_fog_energy = 3.759
 shadow_enabled = true
 spot_range = 16.7298
 
+[node name="SpotLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(0.993052, 0.0645641, 0.0983849, -0.115451, 0.69641, 0.708297, -0.0227857, -0.714734, 0.699025, 31.9494, 6.89696, 4.26593)
+light_energy = 16.0
+light_indirect_energy = 1.69
+light_volumetric_fog_energy = 3.759
+shadow_enabled = true
+spot_range = 16.7298
+
 [node name="InvisibleStaticBody3D" parent="." instance=ExtResource("28_xmfk7")]
 transform = Transform3D(60.442, 0, 0, 0, 7.87721, 0, 0, 0, 1, 19.6116, 3.88975, 3.15131)
 
@@ -653,6 +677,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81354, 5.32228, -0.0898243)
 [node name="Coin15" parent="." instance=ExtResource("29_byvyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.26512, 6.28604, -0.0898243)
 
+[connection signal="area_entered" from="EndZone" to="GameManager" method="_on_end_zone_area_entered"]
+[connection signal="body_entered" from="EndZone" to="GameManager" method="_on_end_zone_body_entered"]
+
+[editable path="EndZone"]
 [editable path="Player"]
 [editable path="Player/playerkite"]
 [editable path="InvisibleStaticBody3D"]

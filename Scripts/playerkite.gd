@@ -5,7 +5,7 @@ var _physics_body_trans_last: Transform3D
 var _physics_body_trans_current: Transform3D
 
 
-var kitePosition = 0.0
+var originalKitePosition
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -24,6 +24,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _ready() -> void:
 	#prevents the visual node from being affected by the movement of its parent
 	_player_visual.top_level = true
+	originalKitePosition = position.y
 
 func _physics_process(delta):
 	_physics_body_trans_last = _physics_body_trans_current
@@ -42,7 +43,8 @@ func _physics_process(delta):
 		#print("Kite move down")
 	else:
 		# Smoothly return the kite to 0 degrees on the Z-axis when no input is given
-		rotation.z = lerp(rotation.z, 0.0, 2.0 * delta)
+		position.y = lerp(position.y, originalKitePosition, 2.0 * delta)
+		rotation.z = lerp(rotation.z, 0.0, 1.2 * delta)
 	# Apply movement and clamp the Y position to keep the kite within bounds
 	position.y = clamp(position.y + velocity.y, MIN_HEIGHT, MAX_HEIGHT)
 	move_and_slide()
