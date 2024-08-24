@@ -61,7 +61,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05814, 0)
 script = ExtResource("1_vhlfk")
 
 [node name="Area3DTrigger" type="Area3D" parent="."]
-collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3DTrigger"]
 shape = SubResource("CapsuleShape3D_1xqmj")
@@ -102,5 +101,10 @@ transform = Transform3D(0.139688, 0.698403, -0.701941, -0.136311, 0.715705, 0.68
 visible = false
 collision_mask = 0
 spring_length = 3.0
+
+[connection signal="area_entered" from="Area3DTrigger" to="." method="_on_area_3d_trigger_area_entered"]
+[connection signal="area_exited" from="Area3DTrigger" to="." method="_on_area_3d_trigger_area_exited"]
+[connection signal="body_entered" from="Area3DTrigger" to="." method="_on_area_3d_trigger_body_entered"]
+[connection signal="body_exited" from="Area3DTrigger" to="." method="_on_area_3d_trigger_body_exited"]
 
 [editable path="playerkite"]

@@ -5,6 +5,7 @@ extends CharacterBody3D
 
 var _physics_body_trans_last: Transform3D
 var _physics_body_trans_current: Transform3D
+var speedModifier = 1.0
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 9.5
@@ -34,8 +35,8 @@ func _physics_process(delta):
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		#trying out interpolation
-		velocity.x = lerp(velocity.x, direction.x * SPEED, 0.5)
-		velocity.z = lerp(velocity.z, direction.z * SPEED, 0.5)
+		velocity.x = lerp(velocity.x, direction.x * speedModifier * SPEED, 0.5)
+		velocity.z = lerp(velocity.z, direction.z * speedModifier * SPEED, 0.5)
 		# Determine if moving left or right and flip the sprite accordingly
 		if velocity.x > 0:
 			animated_sprite_3d.flip_h = false  # Facing right
@@ -58,3 +59,12 @@ func _process(_delta: float) -> void:
 			_physics_body_trans_current,
 			Engine.get_physics_interpolation_fraction()
 		)
+
+func _on_area_3d_trigger_area_entered(area):
+	if(area.is_in_group("boost")):
+		speedModifier = 2.5
+
+func _on_area_3d_trigger_area_exited(area):
+	if(area.is_in_group("boost")):
+		speedModifier = 1.0
+
