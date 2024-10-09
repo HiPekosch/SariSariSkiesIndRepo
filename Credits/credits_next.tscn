@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn6udreewfeob"]
+
+[ext_resource type="Script" path="res://Credits/credits_next.gd" id="1_5t1wg"]
+[ext_resource type="Texture2D" uid="uid://cb0vvrmr1yadd" path="res://Credits/2.png" id="1_e6y1t"]
+
+[node name="credits_2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5t1wg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_e6y1t")
+expand_mode = 2
+
+[node name="credit_last_button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(146.083, 83.5469)

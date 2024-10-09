@@ -22,7 +22,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="racerkite" type="CharacterBody3D" groups=["Kite"]]
+[node name="racerkite" type="CharacterBody3D"]
 motion_mode = 1
 
 [node name="Area3D" type="Area3D" parent="."]

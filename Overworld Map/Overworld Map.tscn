@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq4ufs2lutt1l"]
+
+[ext_resource type="Script" path="res://Overworld Map/Overworld Map.gd" id="1_it4gu"]
+[ext_resource type="Texture2D" uid="uid://goo8g72yw0dn" path="res://Overworld Map/Town_Map.png" id="2_xop3m"]
+
+[node name="Overworld Map" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_it4gu")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xop3m")
+expand_mode = 2
+
+[node name="race_select" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 435.674
+offset_top = 172.667
+offset_right = 443.674
+offset_bottom = 180.667
+scale = Vector2(4.71979, 4.26986)
+
+[node name="store_screen" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 894.347
+offset_top = 179.27
+offset_right = 902.347
+offset_bottom = 187.27
+scale = Vector2(5.71979, 4.26986)
+
+[node name="back_button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 24.8594
+offset_top = 31.539
+offset_right = 32.8594
+offset_bottom = 39.539
+scale = Vector2(13.1998, 11.5499)
