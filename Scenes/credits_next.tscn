@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bn6udreewfeob"]
 
-[ext_resource type="Script" path="res://Credits/credits_next.gd" id="1_5t1wg"]
-[ext_resource type="Texture2D" uid="uid://cb0vvrmr1yadd" path="res://Credits/2.png" id="1_e6y1t"]
+[ext_resource type="Script" path="res://Scripts/credits_next.gd" id="1_5t1wg"]
+[ext_resource type="Texture2D" uid="uid://cb0vvrmr1yadd" path="res://Assets/Credits/2.png" id="1_e6y1t"]
 
 [node name="credits_2" type="Control"]
 layout_mode = 3

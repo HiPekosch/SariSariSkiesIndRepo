@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://pwa5udh3xm1l"]
 
 [ext_resource type="Texture2D" uid="uid://bq0mbfu6rx8td" path="res://7ee43017-a390-4112-9c32-83f52e4fa9f6_upscaled.png" id="1_2cf7y"]
-[ext_resource type="Script" path="res://Main Menu/main_menu.gd" id="1_rd5h2"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_rd5h2"]
 [ext_resource type="FontFile" uid="uid://diqisommjuaf4" path="res://KinderBoys-z8J0D.otf" id="2_ndslm"]
 
 [node name="Main Menu" type="Control"]

@@ -56,4 +56,3 @@ func _process(_delta: float) -> void:
 			_physics_body_trans_current,
 			Engine.get_physics_interpolation_fraction()
 		)
-

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cq4ufs2lutt1l"]
 
-[ext_resource type="Script" path="res://Overworld Map/Overworld Map.gd" id="1_it4gu"]
-[ext_resource type="Texture2D" uid="uid://goo8g72yw0dn" path="res://Overworld Map/Town_Map.png" id="2_xop3m"]
+[ext_resource type="Script" path="res://Scripts/Overworld Map.gd" id="1_it4gu"]
+[ext_resource type="Texture2D" uid="uid://goo8g72yw0dn" path="res://Assets/Overworld Map/Town_Map.png" id="2_xop3m"]
 
 [node name="Overworld Map" type="Control"]
 layout_mode = 3

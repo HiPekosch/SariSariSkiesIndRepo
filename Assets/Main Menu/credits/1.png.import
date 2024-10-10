@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://goo8g72yw0dn"
-path="res://.godot/imported/Town_Map.png-8d1fe327409b8aa437e23ee5f889c9e6.ctex"
+uid="uid://dw3la64ocaocu"
+path="res://.godot/imported/1.png-4bc54f7d5ea4642e1b5ef5373790427d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Overworld Map/Town_Map.png"
-dest_files=["res://.godot/imported/Town_Map.png-8d1fe327409b8aa437e23ee5f889c9e6.ctex"]
+source_file="res://Assets/Main Menu/credits/1.png"
+dest_files=["res://.godot/imported/1.png-4bc54f7d5ea4642e1b5ef5373790427d.ctex"]
 
 [params]
 
