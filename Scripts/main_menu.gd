@@ -11,6 +11,7 @@ extends Control
 
 
 func _ready():
+	# Testing
 	play_button.button_down.connect(on_play_pressed)
 	exit_button.button_down.connect(on_exit_pressed)
 	credits_button.button_down.connect(on_credits_pressed)
