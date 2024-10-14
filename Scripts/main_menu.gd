@@ -19,6 +19,7 @@ func _ready():
 	self.add_to_group("menu_group")
 
 func on_play_pressed() -> void:
+	assert(PlayerControlManager.get_player_count() > 0, "You didn't join as a device, oopsie.")
 	get_tree().change_scene_to_packed(overworld_map)
 
 func on_exit_pressed() -> void:
@@ -30,5 +31,5 @@ func on_credits_pressed() -> void:
 func on_options_pressed() -> void:
 	get_tree().change_scene_to_packed(options_screen)
 
-func _input(event):
+func _process(_delta):
 	PlayerControlManager.handle_join_input()

@@ -23,6 +23,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _ready() -> void:
 	#prevents the visual node from being affected by the movement of its parent
 	_player_visual.top_level = true
+	player_init()
 
 # TEMPORARY SOLUTION
 # Just here for singleplayer
@@ -50,12 +51,12 @@ func _physics_process(delta):
 			coyote_time = 0
 	
 	# Handle jump.
-	if Input.is_action_just_pressed("player_jump") and coyote_time > 0:
+	if input.is_action_just_pressed("player_jump") and coyote_time > 0:
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("player_move_left", "player_move_right", "player_move_up", "player_move_down")
+	var input_dir = input.get_vector("player_move_left", "player_move_right", "player_move_up", "player_move_down")
 	print(input_dir)
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
