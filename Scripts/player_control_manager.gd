@@ -18,11 +18,11 @@ func join(device: int):
 	var player = next_player()
 	if player >= 0:
 		# initialize default player data here
-		# "team" and "car" are remnants from my game just to provide an example
+		# Since this is a global thing it's just gonna be what controller they're using
+		# and if they're the one controlling the UI
 		player_data[player] = {
 			"device": device,
-			"team":0,
-			"car":"muscle",
+			"active": true
 		}
 		player_joined.emit(player)
 

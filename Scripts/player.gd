@@ -14,12 +14,25 @@ const COYOTE_LEEWAY = 0.2
 
 var coyote_time = 0
 
+var player : int
+var input : DeviceInput
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready() -> void:
 	#prevents the visual node from being affected by the movement of its parent
 	_player_visual.top_level = true
+
+# TEMPORARY SOLUTION
+# Just here for singleplayer
+# In the near future, figure out where to call this
+func player_init():
+	player = 0
+	
+	var device = PlayerControlManager.get_player_device(player)
+	input = DeviceInput.new(device)
+	pass
 
 func _physics_process(delta):
 	_physics_body_trans_last = _physics_body_trans_current
@@ -43,6 +56,7 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("player_move_left", "player_move_right", "player_move_up", "player_move_down")
+	print(input_dir)
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		#trying out interpolation

@@ -3,7 +3,7 @@ extends Node2D
 signal leave
 
 var player: int
-var input
+var input : DeviceInput
 
 # call this function when spawning this player to set up the input object based on the device
 func init(player_num: int, device: int):

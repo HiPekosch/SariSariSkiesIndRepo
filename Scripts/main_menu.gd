@@ -29,3 +29,6 @@ func on_credits_pressed() -> void:
 
 func on_options_pressed() -> void:
 	get_tree().change_scene_to_packed(options_screen)
+
+func _input(event):
+	PlayerControlManager.handle_join_input()
